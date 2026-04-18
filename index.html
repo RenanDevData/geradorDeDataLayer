@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de DataLayer</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <body>
+  <div class="page">
+ 
+    <header>
+      <h1>DataLayer Builder</h1>
+      <p>Crie eventos no formato GTM/GA4 com escopo de evento e escopo de item</p>
+    </header>
+ 
+    <div class="section">
+      <div class="section-label">Nome do evento</div>
+      <input class="finput" id="eventName" type="text" placeholder="ex: purchase, add_to_cart, begin_checkout" oninput="render()" />
+    </div>
+ 
+    <div class="scope-block">
+      <div class="scope-header">
+        <span class="scope-pill pill-event">escopo de evento</span>
+        <span style="font-size:12px; color:var(--text-secondary);">propriedades diretas do hit</span>
+      </div>
+      <div class="col-labels">
+        <span class="col-label">chave</span>
+        <span class="col-label">tipo</span>
+        <span class="col-label">valor</span>
+        <span></span>
+      </div>
+      <div class="props-list" id="eventProps"></div>
+      <button class="add-btn" >+ adicionar propriedade de evento</button>
+    </div>
+ 
+    <div class="scope-block">
+      <div class="scope-header">
+        <span class="scope-pill pill-item">escopo de item</span>
+        <span style="font-size:12px; color:var(--text-secondary);">array <code style="font-size:11px;">items[]</code> dentro do payload</span>
+      </div>
+ 
+      <label class="has-items-toggle" onclick="toggleItems()">
+        <div class="toggle-box" id="toggleBox"><div class="toggle-knob"></div></div>
+        incluir items no evento
+      </label>
+ 
+      <div class="items-area" id="itemsArea">
+        <div class="col-labels">
+          <span class="col-label">chave</span>
+          <span class="col-label">tipo</span>
+          <span class="col-label">valor</span>
+          <span></span>
+        </div>
+        <div id="itemsList"></div>
+        <button class="add-item-btn" onclick="addItem()">+ adicionar item ao array</button>
+      </div>
+    </div>
+ 
+    <div class="divider"></div>
+ 
+    <div class="preview-label">dataLayer.push()</div>
+    <div class="code-block" id="codeBlock">// preencha o nome do evento acima...</div>
+ 
+    <div class="action-row">
+      <button class="copy-btn" id="copyBtn" onclick="copyCode()">copiar código</button>
+  
+    </div>
+ 
+  </div>
+</body>
+</html>
