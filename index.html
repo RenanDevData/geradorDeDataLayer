@@ -8,28 +8,27 @@
 </head>
 <body>
   <div class="page">
- 
-    <header>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px;">
-        <img src="./logo.svg" alt="DataLayer Builder Logo" style="width: 44px; height: 44px;" /> 
-        </div>
 
-      <h1>DataLayer Builder</h1>
+    <header>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <img src="logo.svg" alt="DataLayer Builder Logo" style="width: 44px; height: 44px;" />
+        <h1>DataLayer Builder</h1>
+      </div>
       <p>Gerador de eventos GA4/GTM baseado na documentação oficial do Google</p>
     </header>
- 
+
     <div class="section">
       <div class="section-label">Categoria</div>
       <div class="categories" id="categories"></div>
     </div>
- 
+
     <div class="templates-grid" id="templatesGrid"></div>
- 
+
     <div class="event-input-wrap">
       <div class="section-label">Nome do evento</div>
       <input class="event-input" id="eventName" type="text" placeholder="ex: purchase, view_item, add_to_cart" oninput="onEventNameInput()" />
     </div>
- 
+
     <div class="scope-block hidden" id="scopePromo">
       <div class="scope-header">
         <span class="scope-pill pill-promo">escopo de promoção</span>
@@ -45,7 +44,7 @@
       <div class="props-list" id="promoProps"></div>
       <button class="btn-add" onclick="addPromoProperty()">+ adicionar campo de promoção</button>
     </div>
- 
+
     <div class="scope-block">
       <div class="scope-header">
         <span class="scope-pill pill-event">escopo de evento</span>
@@ -60,18 +59,18 @@
       <div class="props-list" id="eventProps"></div>
       <button class="btn-add" onclick="addEventProperty()">+ adicionar propriedade de evento</button>
     </div>
- 
+
     <div class="scope-block">
       <div class="scope-header">
         <span class="scope-pill pill-item">escopo de item</span>
         <span style="font-size:12px;color:var(--text-secondary)">array <code style="font-size:11px">ecommerce.items[]</code></span>
       </div>
- 
+
       <label class="toggle-row" onclick="toggleItems()">
         <div class="toggle-box" id="toggleBox"><div class="toggle-knob"></div></div>
         incluir items no evento
       </label>
- 
+
       <div class="hidden" id="itemsArea">
         <div class="col-labels">
           <span class="col-label">chave</span>
@@ -83,19 +82,23 @@
         <button class="btn-add-item" onclick="addItem()">+ adicionar item ao array</button>
       </div>
     </div>
- 
+
     <div class="divider"></div>
- 
+
+    <div id="validationWarnings" class="hidden"></div>
+
     <div class="code-label">dataLayer.push()</div>
     <div class="code-block" id="codeBlock">// selecione um template ou preencha o nome do evento...</div>
- 
+
     <div class="action-row">
       <button class="btn-copy" id="copyBtn" onclick="copyCode()">copiar código</button>
-     
     </div>
- 
-  </div>
- 
-  <script src="./script.js"></script>
+
+    
+    
+
+  
+
+  <script src="app.js"></script>
 </body>
 </html>
