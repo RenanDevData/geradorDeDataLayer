@@ -10,10 +10,6 @@
   <div class="page">
  
     <header>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px;">
-        <img src="./logo.svg" alt="DataLayer Builder Logo" style="width: 44px; height: 44px;" /> 
-        </div>
-
       <h1>DataLayer Builder</h1>
       <p>Gerador de eventos GA4/GTM baseado na documentação oficial do Google</p>
     </header>
@@ -91,7 +87,8 @@
  
     <div class="action-row">
       <button class="btn-copy" id="copyBtn" onclick="copyCode()">copiar código</button>
-     
+      <button class="btn-push" onclick="pushLayer()">testar push</button>
+      <span class="badge-pushed" id="pushedBadge">disparado!</span>
     </div>
  
   </div>
